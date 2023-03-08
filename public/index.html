@@ -9,7 +9,7 @@
     <title>Vicky Mini NetFlix</title>
 </head>
 <body>
-  <div class="col-lg-6">
+  <div class="col-lg-6 col-sm-12 px-5 fw-ligther text-center">
     <h1>Upload Your Movie Here</h1>
     <input type="text" placeholder="Movie Title" id="movieTitle" class="form-control px-3 mt-2 fw-ligther">
     <input type="text" placeholder="Movie Duration" id="movieDuration" class="form-control px-3 mt-2 fw-ligther">
@@ -65,7 +65,7 @@
           },(error)=>{
             console.log(err)
           },()=>{
-            swal("Upload Complete", "You clicked the button!", "success");
+            console.log("upload complete")
           })
         })
         let allMovieRef = ref(database,"Movies")
