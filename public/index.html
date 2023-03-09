@@ -9,6 +9,7 @@
     <title>Vicky Mini NetFlix</title>
 </head>
 <body>
+  <img src="./Netfllix movie pictures.png" alt="">
     <div class="container-fluid col-lg-6">
       <h6 class="fw-lighter fs-1 mt-3 text-center text-muted">Vicky-Mini-Netflix Application</h6>
           <div class="rounded rounded-3 col-md-9 col-lg-10 mx-auto my-4  shadow-5" style="background-image: url(./blue-cardboard-background-flat-lay-top-view_164357-2984.avif); background-repeat:no-repeat; background-size:cover">
@@ -32,6 +33,12 @@
         <button id="uploadBtn" class="btn btn-info fw-ligther px-3 mt-3">Upload Your Movie</button>
       </div>
     </div>
+    <div id="progressBar" class="btn btn-sucesss
+    col-lg-6 mx-auto col-sm-6 align-items-center">
+      
+    </div>
+    
+    
   </div>
       <script type="module">
         // Import the functions you need from the SDKs you need
@@ -77,6 +84,20 @@
             const uploadTask = uploadBytesResumable(movieStRef,file)
             uploadTask.on("state-changed",(snapshot)=>{
               console.log((snapshot.bytesTransferred/snapshot.totalBytes)*100)
+               // Add a progress bar and an alert
+               progressBar.innerHTML = `
+               <div class="progress" >
+                   <div 
+                       class="progress-bar progress-bar-striped progress-bar-animated" 
+                       role="progressbar" 
+                       style="width: ${percentageUpload}%;" 
+                       aria-valuenow="${percentageUpload}" 
+                       aria-valuemin="0" 
+                       aria-valuemax="100"
+                       >${percentageUpload}%
+                   </div>
+               </div>
+              `
           },(error)=>{
             console.log(err)
           },()=>{
