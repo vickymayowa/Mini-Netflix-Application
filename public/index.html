@@ -37,7 +37,7 @@
     col-lg-6 mx-auto col-sm-6 align-items-center">
       
     </div>
-    
+    <div id="alertDiv"></div>
     
   </div>
       <script type="module">
@@ -102,7 +102,20 @@
             console.log(err)
           },()=>{
             console.log("upload complete")
-          })
+            console.log("upload is complete")
+            progressBar.innerHTML = ""
+            alertDiv.innerHTML = `
+            <p class="text-center">Upload Successful!</p>
+            `
+            alertDiv.className = "alert alert-success"
+            setTimeout(()=>{
+                alertDiv.innerHTML = ""
+                alertDiv.className = ""
+            },3000)
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL)=>{
+                console.log(downloadURL)
+            })
+          
         })
         let allMovieRef = ref(database,"Movies")
         onValue(allMovieRef,(snapshot)=>{
