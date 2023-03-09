@@ -33,23 +33,22 @@
               
                 // Your web app's Firebase configuration
                 const firebaseConfig = {
-                  apiKey: "AIzaSyAQUmj8z7qrFOUHg4vx4Pms9-tbRkloSzM",
-                  authDomain: "vicky-mini-netflix.firebaseapp.com",
-                  databaseURL: "https://vicky-mini-netflix-default-rtdb.firebaseio.com",
-                  projectId: "vicky-mini-netflix",
-                  storageBucket: "vicky-mini-netflix.appspot.com",
-                  messagingSenderId: "411800314714",
-                  appId: "1:411800314714:web:7b5c43e5cc1b58e9c0c963"
-                };
-                
+                    apiKey: "AIzaSyAfIMZ-bIRHx-LlYygK_EhwerifAowIL8U",
+                    authDomain: "vicky-mini-netflix-application.firebaseapp.com",
+                    databaseURL: "https://vicky-mini-netflix-application-default-rtdb.firebaseio.com",
+                    projectId: "vicky-mini-netflix-application",
+                    storageBucket: "vicky-mini-netflix-application.appspot.com",
+                    messagingSenderId: "760047878924",
+                    appId: "1:760047878924:web:7df572890fd00c740d3f29"
+                  };
+                  
                 // Initialize Firebase
                 const app = initializeApp(firebaseConfig);
-                const auth = getAuth();
                 const database = getDatabase();
                 const storage = getStorage()
                 
 
-                let allMoviesRef = ref(database,"allMovies")
+                let allMoviesRef = ref(database,"Movie")
                 onValue(allMoviesRef,(snapshot)=>{
                     let data = snapshot.val()
                     console.log(data)
