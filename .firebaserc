@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "vicky-mini-netflix"
-  }
+    "default": "vicky-mini-netflix",
+    "Project": "vicky-netflix-application"
+  },
+  "targets": {},
+  "etags": {}
 }

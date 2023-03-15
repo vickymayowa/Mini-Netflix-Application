@@ -34,7 +34,7 @@
       </div>
     </div>
     <div id="progressBar" class="progressBar
-    col-lg-6 mx-auto col-sm-6 align-items-center">
+    col-lg-6 mx-auto col-sm-6 align-items-center mb-2">
       
     </div>
     <div id="alertDiv"></div>
@@ -97,12 +97,8 @@
                 aria-valuemax="100"
                 >${percentageUpload}%
             </div>
-        </div>
-       
-        `
-    },
-    (error)=>{
-        // in case the upload fails
+        </div>`},(error)=>{
+            // in case the upload fails
         console.log(err)
     },
     ()=>{
